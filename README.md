@@ -15,11 +15,10 @@ Compile the source code using the command below:
    javac -d bin -p $JAVAFX_HOME/lib --add-modules javafx.controls src/cs1302/gui/*.java
    ```
 There are a few new command-line arguments to `javac` that you haven't seen before:
-   
-      * `-p $JAVAFX_HOME/lib`: tells the java compiler where to find the JavaFX library files (`.class` files)
+
+ * `-p $JAVAFX_HOME/lib`: tells the java compiler where to find the JavaFX library files (`.class` files)
         on Odin.
-	
-      * `--add-modules javafx.controls`: JavaFX is organized into 7 different modules. This option
+ * `--add-modules javafx.controls`: JavaFX is organized into 7 different modules. This option
         tells `javac` which modules to include. A list of the modules in JavaFX 17 can be found 
 	[here](https://openjfx.io/javadoc/17/).
  
