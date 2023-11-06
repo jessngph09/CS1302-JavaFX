@@ -29,3 +29,5 @@ There are a few new command-line arguments to `javac` that you haven't seen befo
    java -cp bin -Dprism.order=sw -p $JAVAFX_HOME/lib --add-modules javafx.controls cs1302.gui.ExampleDriver
    ```
 Notice the use of the `-p` and `add-modules` command line arguments as shown in the previous step. 
+
+
