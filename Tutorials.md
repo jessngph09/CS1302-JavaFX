@@ -97,3 +97,4 @@ visible).
 │           └── ImageDriver.java
 └── TwoPaneScreenShot.png
    ```
+* The class should contain the `static` constants from the `ImageApp` class. They can be cut and paste directly from that class, perhaps changing them to `protected` visibility if you wish to do so. That way they can be accessedby the other classes in the package.
