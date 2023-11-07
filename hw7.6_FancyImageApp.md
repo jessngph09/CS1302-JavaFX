@@ -51,11 +51,64 @@ command depends on your present working directory), then please note that contex
 #### Run your `compile.sh`
 
    ```
-   chmod +x compile.sh
+   $ chmod +x compile.sh
    ```
 
    ```
-   ./compile.sh
+   $ ./compile.sh
    ```
+
+1. Enter an invalid URL into the `TextField` and click the load button. The starter code includes a method called `alertError`
+   that displays an error message within an `Alert` window. Take a minute to look over the code in that method.
+
+1. Consider the following screenshot and associated containment hierarchy:
+
+   <table>
+   <tr>
+      <td><img src="resources/exampleNewIcons.png" width="382"></td>
+      <td><pre><code>            Stage
+                 |
+               Scene
+                 |
+               VBox
+                 |
+               /---\---------\
+              /     \         \
+            HBox  ImageView  HBox
+            / \               |
+           /   \            /---\-----\
+    TextField  Button      /     \     \
+                      Button Button Button
+                      /      /           \
+                 ImageView ImageView ImageView</code></pre></td>
+   </tr>
+   </table>
+   
+   Each node corresponds to an object of some class under the 
+   [`javafx`](https://openjfx.io/javadoc/17/)
+   package. The diagram for the scene graph assumes that child nodes
+   are added to their parents in a left-to-right order.
+   Here are some additional notes:
+
+   * All images will be loaded into the application with a width and height of `300`. Even if the original image
+     is not perfectly square, it will show up that way in the app. This is expected behavior and this functionality
+     is already built into the starter code. You can see this in the call to the `Image` constructor.
+     
+   * The text field is expected to grow with its parent `HBox`.
+   
+   * The three buttons at the bottom should grow to fill their enclosing `HBox`. Buttons require an
+     extra step that was not needed with text fields. To get this to work, make sure you read and 
+     understand all of the starter code in the 
+     [`Hbox` Documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/HBox.html)
+   
+   * The three `ImageView` objects associated with the `Button` objects 
+      via each `Button` object's `graphic` property. 
+
+   * The icons for the associated images are contained in the `resources` directory 
+     provided with this exercise. To use these local files in your `ImageView`, you
+     can use a relative `file:` URL, e.g., `file:resources/image.png` -- this will only work
+     if resources is in the present working directory when the app is run. There is an example
+     of this in the `init` method in the starter code. There, we initialize the default image
+     from the `resources` directory.
    
   
