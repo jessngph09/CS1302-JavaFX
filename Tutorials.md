@@ -7,7 +7,23 @@ Use the following command to download and execute a shell script that retrieves
    ```
    $ curl -s -L https://git.io/fjfie | bash
    ```
-
+# Directories (cs1302-components)
+   ```
+├── bin
+│   └── cs1302
+│       └── gui
+│           ├── ImageApp.class
+│           └── ImageDriver.class
+├── components.md
+├── doc
+├── ScreenShot.png
+├── src
+│   └── cs1302
+│       └── gui
+│           ├── ImageApp.java
+│           └── ImageDriver.java
+└── TwoPaneScreenShot.png
+   ```
 # Hierachy
  Consider the following containment hierarchy:
    
@@ -80,26 +96,25 @@ below; please read them carefully). As this class extends `VBox`,
 it "is-a" `VBox` and inherits all of the members of `VBox`
 (although only `public` and `protected` members will be directly
 visible).
-
    ```
-├── bin
-│   └── cs1302
-│       └── gui
-│           ├── ImageApp.class
-│           └── ImageDriver.class
-├── components.md
-├── doc
-├── ScreenShot.png
-├── src
-│   └── cs1302
-│       └── gui
-│           ├── ImageApp.java
-│           └── ImageDriver.java
-└── TwoPaneScreenShot.png
+package cs1302.gui;
+
+import javafx.scene.layout.VBox;
+
+/**
+ * This class is an extension of the VBox class to provide functionality
+ * for loading and displaying images.
+ */
+
+public class ImageLoader extends VBox {
+
+} //ImageLoader
+
    ```
 * The class should contain the `static` constants from the `ImageApp` class. They can be cut and paste directly from that class, perhaps changing them to `protected` visibility if you wish to do so. That way they can be accessedby the other classes in the package.
   ```
   protected static final String IMAGE_DIR = "path/to/images";
   protected static final String DEFAULT_IMAGE = "path/to/default/image.png";
+  
   ```
 * 
