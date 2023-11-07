@@ -89,7 +89,7 @@ part of the original scene graph with a single `ImageLoader` component:
    
    Note that the root of this sub-graph is a `VBox`.
 
-# Implement ImageLoader
+# Implement ImageLoader.java
 Create a class called `ImageLoader` in the `cs1302.gui` package
 that extends the `VBox` class (additional details are provided
 below; please read them carefully). As this class extends `VBox`,
@@ -128,5 +128,20 @@ public class ImageLoader extends VBox {
     private TextField textField;
     private Button button;
     private ImageView imageView;
-
+   
    ```
+* In `ImageLoader`, add a default constructor that explicitly calls `super()`. After the call to `super`, the constructor should instantiate the other nodes in the `ImageLoader` sub-graph (`HBox`, `ImageView`, `TextField`, and `Button`). Since  `ImageLoader` extends `VBox`, it is-a `VBox`. Therefore, you can call any `VBox` methods using `this` as the calling object. Use this knowledge to add your newly created nodes to the sub-graph rooted at `this` similar to how they are added to the `VBox` node in the `ImageApp` class.  Your code will likely look something like the code below with additional statements to instantiate the components and connect them:
+  
+      ```java
+  
+      public ImageLoader() {
+         super();
+         // instantiate objects for the component's sub-graph, then
+         // add them to the ImageLoader (i.e., this)...
+         this.getChildren().addAll(urlLayer, imgView);
+         // Add TextField and Button to the HBox
+         hbox.getChildren().addAll(textField, button);
+      } // ImageLoader
+  
+	  ```
+  
