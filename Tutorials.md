@@ -98,3 +98,8 @@ visible).
 └── TwoPaneScreenShot.png
    ```
 * The class should contain the `static` constants from the `ImageApp` class. They can be cut and paste directly from that class, perhaps changing them to `protected` visibility if you wish to do so. That way they can be accessedby the other classes in the package.
+  ```
+  protected static final String IMAGE_DIR = "path/to/images";
+  protected static final String DEFAULT_IMAGE = "path/to/default/image.png";
+  ```
+* 
