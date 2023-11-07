@@ -72,4 +72,28 @@ part of the original scene graph with a single `ImageLoader` component:
    ```
    
    Note that the root of this sub-graph is a `VBox`.
-   
+
+# Implement ImageLoader
+Create a class called `ImageLoader` in the `cs1302.gui` package
+that extends the `VBox` class (additional details are provided
+below; please read them carefully). As this class extends `VBox`,
+it "is-a" `VBox` and inherits all of the members of `VBox`
+(although only `public` and `protected` members will be directly
+visible).
+
+   ```
+├── bin
+│   └── cs1302
+│       └── gui
+│           ├── ImageApp.class
+│           └── ImageDriver.class
+├── components.md
+├── doc
+├── ScreenShot.png
+├── src
+│   └── cs1302
+│       └── gui
+│           ├── ImageApp.java
+│           └── ImageDriver.java
+└── TwoPaneScreenShot.png
+   ```
