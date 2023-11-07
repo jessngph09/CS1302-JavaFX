@@ -113,10 +113,20 @@ public class ImageLoader extends VBox {
 
    ```
 * The class should contain the `static` constants from the `ImageApp` class. They can be cut and paste directly from that class, perhaps changing them to `protected` visibility if you wish to do so. That way they can be accessedby the other classes in the package.
-* 
+  
   ```java
+  
   protected static final String IMAGE_DIR = "path/to/images";
   protected static final String DEFAULT_IMAGE = "path/to/default/image.png";
   
   ```
-* 
+* Your `ImageLoader` class should contain instance variables for the nodes in the sub-graph above (`HBox`, `TextField`, `Button`, and `ImageView`).You do not need an instance variable for `VBox` because the `ImageLoader` itself is a `VBox`! For the most part, the required instance variables can be cut and paste from the `ImageApp` class. Any instance variables that you move into the `ImageLoader` class can be removed from `ImageApp`. You can also remove any imports that are no longer needed in `ImageApp`.
+
+   ```java
+   
+    private HBox hbox;
+    private TextField textField;
+    private Button button;
+    private ImageView imageView;
+
+   ```
