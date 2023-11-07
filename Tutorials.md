@@ -6,3 +6,70 @@ Use the following command to download and execute a shell script that retrieves
 
    ```
    $ curl -s -L https://git.io/fjfie | bash
+   ```
+
+# Hierachy
+ Consider the following containment hierarchy:
+   
+   ```
+                                                             --|
+                         Stage                                 |
+                           |                                   |
+                         Scene                                 |
+          |--              |                                   |
+          |               HBox                                 |
+          |                |\                                  |
+          |                | \------------------\              |
+          |                |                    |              |
+          |               VBox                 VBox            | Overall
+          |               / \                  / \             | Containment
+   Scene  |              /   \                /   \            | Hierarchy
+   Graph  |            HBox  ImageView      HBox  ImageView    |
+          |            / \                  / \                |
+          |           /   \                /   \               |
+          |    TextField  Button    TextField  Button          |
+          |--                                                --|
+   ```
+In this scenario, the root `HBox` of the scene graph contains two
+separate, but identical, `VBox` objects. Building this app would
+require the programmer to repeat the exact same code to create
+these two `VBox` objects. Now, imagine that there are hundreds
+of these in an app. Custom components allow us to avoid this type
+of redundancy!
+
+Consider the following scene graph where we replace the lower `VBox` 
+sub-graphs with `ImageLoader`, a custom component that we will create 
+in the next step. The resulting scene graph is much cleaner (kinda looks
+like a giraffe, no?)!
+
+   ```
+                                                             --|
+                         Stage                                 |
+                           |                                   |
+                         Scene                                 |
+          |--              |                                   | Overall
+          |               HBox                                 | Containment
+   Scene  |                |\                                  | Hierarchy
+   Graph  |                | \------------------\              |
+          |                |                    |              |
+          |           ImageLoader          ImageLoader         |
+          |--                                                --|
+   ```
+Now consider the sub-graph for the `ImageLoader` component that we
+will create. We want to avoid repeating this work by replacing this redundant
+part of the original scene graph with a single `ImageLoader` component:
+
+   ```
+          |--
+          |               VBox
+          |               / \
+   Sub-   |              /   \
+   Graph  |            HBox  ImageView
+          |            / \
+          |           /   \
+          |    TextField  Button
+          |--
+   ```
+   
+   Note that the root of this sub-graph is a `VBox`.
+   
