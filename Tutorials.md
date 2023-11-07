@@ -96,7 +96,7 @@ below; please read them carefully). As this class extends `VBox`,
 it "is-a" `VBox` and inherits all of the members of `VBox`
 (although only `public` and `protected` members will be directly
 visible).
-   ```
+   ```java
 package cs1302.gui;
 
 import javafx.scene.layout.VBox;
@@ -110,7 +110,7 @@ public class ImageLoader extends VBox {
 
 } //ImageLoader
 
-   ```
+   ```java
 * The class should contain the `static` constants from the `ImageApp` class. They can be cut and paste directly from that class, perhaps changing them to `protected` visibility if you wish to do so. That way they can be accessedby the other classes in the package.
   ```
   protected static final String IMAGE_DIR = "path/to/images";
