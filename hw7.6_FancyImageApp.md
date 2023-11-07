@@ -48,4 +48,14 @@ command depends on your present working directory), then please note that contex
   java -cp bin -Dprism.order=sw -p $JAVAFX_HOME/lib --add-modules javafx.controls cs1302.gui.ImageDriver
 
   ```
+#### Run your `compile.sh`
+
+   ```
+   chmod +x compile.sh
+   ```
+
+   ```
+   ./compile.sh
+   ```
+   
   
